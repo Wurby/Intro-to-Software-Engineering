@@ -1,16 +1,16 @@
 /***********************************************************************
 * Program:
 *    Assignment 44, Search Speed
-*    Brother {Neff, Helfrich, Grimmett, Jones, Sloan}, CS124
+*    Brother Honeycutt, CS124
 * Author:
-*    your name
+*    Joshua Pearson
 * Summary: 
 *    This program compares the search speed of the linear search
 *    and the binary search.
 *
 *    Estimated:  0.0 hrs   
-*    Actual:     0.0 hrs
-*      Please describe briefly what was the most difficult part
+*    Actual:     1.0 hrs
+*      Understanding the differences in binary and linear
 ************************************************************************/
 
 #include <iostream>
@@ -103,8 +103,11 @@ float computeAverageLinear(int list[], int num)
 {
    float averageLinear = 0.0;
 
-   // put your code here, probably including a collections of
-   // calls to linear()
+   for (int i = 0; i < num; i++)
+	{
+		averageLinear += linear(list, num, list[i]);
+	}
+	averageLinear = averageLinear / num;
 
    return averageLinear;
 }
@@ -122,8 +125,11 @@ float computeAverageBinary(int list[], int num)
 {
    float averageBinary = 0.0;
 
-   // put your code here, probably including a collections of
-   // calls to binary()
+   for (int i = 0; i < num; i++)
+	{
+		averageBinary += binary(list, num, list[i]);
+	}
+	averageBinary = averageBinary / num; 
 
    return averageBinary;
 }
