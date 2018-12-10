@@ -103,6 +103,7 @@ void interact(int board[][COLS])
   {
     cout << "\n> ";
     cin >> optionSelected;
+    toupper(optionSelected);
     switch (optionSelected)
     {
       case '?':
@@ -110,19 +111,15 @@ void interact(int board[][COLS])
         cout << endl;
         break;
       case 'D':
-      case 'd':
         display(board);
         break;
       case 'E':
-      case 'e':
         editSelectedArea(board);
         break;
       case 'S':
-      case 's':
         showPossible(board);
         break;
       case 'Q':
-      case 'q':
         break;
       default:
         cout << "ERROR: Invalid command\n";
