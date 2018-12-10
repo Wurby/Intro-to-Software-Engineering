@@ -96,7 +96,6 @@ bool readFile(string & filename, int board[][COLS])
 void interact(int board[][COLS])
 {
   char optionSelected;
-  interact();
   cout << endl;
   display(board);
   do
