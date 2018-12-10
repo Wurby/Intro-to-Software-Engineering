@@ -66,7 +66,7 @@ void getFilename(string & filename)
 }
 
 /**********************************************************************
- * iterates file and stores in arrays
+ * iterates file and stores in array
  ***********************************************************************/
 bool readFile(string & filename, int board[][COLS])
 {
@@ -91,21 +91,19 @@ bool readFile(string & filename, int board[][COLS])
 }
 
 /**********************************************************************
- * interact
- * prompts the user for the game option desired and performs the 
- * corresponding tasks.
+ * Asks for options, plays game while quit has not been selected.
  ***********************************************************************/
 void interact(int board[][COLS])
 {
-  char option;
+  char optionSelected;
   interact();
   cout << endl;
   display(board);
   do
   {
     cout << "\n> ";
-    cin >> option;
-    switch (option)
+    cin >> optionSelected;
+    switch (optionSelected)
     {
       case '?':
         interact();
@@ -130,7 +128,7 @@ void interact(int board[][COLS])
         cout << "ERROR: Invalid command\n";
         break;
     }
-  } while (toupper(option) != 'Q');
+  } while (toupper(optionSelected) != 'Q');
 }
 
 /**********************************************************************
@@ -187,17 +185,17 @@ bool writeFile(string & filename, int board[][COLS])
 void editSelectedArea(int board[][COLS])
 {
   string coords;
-  int c;
-  int r;
+  int col;
+  int row;
   getCoordinates(coords);
-  c = toupper(coords[0]) - 'A';
-  r = (int)coords[1] - '1';
+  col = toupper(coords[0]) - 'A';
+  row = (int)coords[1] - '1';
   coords[0] = toupper(coords[0]);
-  if (isValid(r, c, coords, board))
+  if (isValid(row, col, coords, board))
   {
     cout << "What is the value at '" << coords[0]
          << coords[1] << "': ";
-    cin >> board[r][c];
+    cin >> board[row][col];
   }
 }
 
@@ -235,10 +233,11 @@ void showPossible(int board[][COLS])
   getCoordinates(coords);
   int c = toupper(coords[0]) - 'A';
   int r = (int)coords[1] - '1';
-  
+  // values that can be added to the board.
   int possible[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
   getValues(r, c, board, possible);
   coords[0] = toupper(coords[0]);
+  
   cout << "The possible values for " << coords[0] << coords[1]
        << " is/are: " << possible;
   for (int i = 0; i < 9; i++)
@@ -259,11 +258,11 @@ void getValues(int r, int c, int board[][COLS], int possible[])
 }
 
 /**********************************************************************
- * display
- * prints the game board with the loaded data from the given file
+ * couts the board with the given data.
  ***********************************************************************/
 void display(int board[][COLS])
 {
+  // top row grid markers.
   cout << "   A B C D E F G H I\n";
   for (int r = 0; r < ROWS; r++)
   {
