@@ -5,13 +5,13 @@
 * Author:
 *    Joshua Pearson
 * Summary:
-*    Creates a quick sudoku board and allows some interaction.
+*    Creates a quick sudoku board, allows interaction.
 *    
 *    
 *
 *    Estimated:  6.0 hrs
-*    Actual:     9.4 hrs
-*      Figuring out how to display the stuff.
+*    Actual:     9.5 hrs
+*      Figuring out how to properly use do while to keep interact
 ************************************************************************/
 
 #include <iostream>
