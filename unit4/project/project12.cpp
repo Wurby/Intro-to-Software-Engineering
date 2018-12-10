@@ -32,7 +32,7 @@ bool readFile(string & filename, int board[][COLS]);
 void display(int board[][COLS]); 
 void showPossible(int board[][COLS]);
 void getValues(int r, int c, int board[][COLS], int possilbe[]); 
-void interact(); 
+void getInteraction(); 
 void interact(int board[][COLS]); 
 void getCoordinates(string & coords); 
 bool isValid(int r, int c, string & coords, int board[][COLS]); 
@@ -96,6 +96,7 @@ bool readFile(string & filename, int board[][COLS])
 void interact(int board[][COLS])
 {
   char optionSelected;
+  getInteraction();
   cout << endl;
   display(board);
   do
@@ -130,7 +131,7 @@ void interact(int board[][COLS])
 /**********************************************************************
  * display possbilities
  ***********************************************************************/
-void interact()
+void getInteraction()
 {
   cout << "Options:" << endl;
   cout << "   ?  Show these instructions" << endl;
