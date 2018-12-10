@@ -107,7 +107,7 @@ void interact(int board[][COLS])
     switch (optionSelected)
     {
       case '?':
-        interact();
+        getInteraction();
         cout << endl;
         break;
       case 'D':
