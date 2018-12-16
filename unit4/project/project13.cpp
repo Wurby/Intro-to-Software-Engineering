@@ -311,6 +311,22 @@ void showPossibleValues(int board[][COLS])
 }
 
 /***********************************************************************
+* is valid selection
+* this checks if selected coordinate already has a value.
+************************************************************************/
+bool isValidSelection(string & coords, int board[][COLS])
+{
+   if (board[coords[1]][coords[1]] != 0)
+   {
+      cout << "ERROR: Square '" << coords[0] << coords[1]
+           << "' is filled\n";
+      return false;
+   }
+   else
+   return true;
+}
+
+/***********************************************************************
 * get possible values
 * this removes invalid values.
 ************************************************************************/
