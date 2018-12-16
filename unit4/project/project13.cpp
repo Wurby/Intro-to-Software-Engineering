@@ -24,6 +24,11 @@ using namespace std;
 #define ROWS 9
 #define COLS 9
 
+void display(int board[][COLS]);
+void getFile(string & filename);
+int readFile(string & filename, int board[][COLS]);
+
+
 /***********************************************************************
 * Main
 * Starts the program ends it based on user interaction.
