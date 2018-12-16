@@ -38,7 +38,7 @@ int main()
    string filename;
    int board[ROWS][COLS];
    getFile(filename);
-   readFile(filename);
+   readFile(filename, board);
    display(board);
    return 0;
 }
