@@ -1,6 +1,6 @@
 /***********************************************************************
 * Program:
-*    Project 12, Sudoku Project
+*    Project 13, Sudoku Project
 *    Brother Honeycutt, CS124
 * Author:
 *    Joshua Pearson
